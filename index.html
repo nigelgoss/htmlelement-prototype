@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html>
+	
+	<head>
+		<script src="ngpointerdown.js"></script>
+		<script src="ngstyle.js"></script>
+	</head>
+	
+	<body style="font-family:Cursive;">
+
+		<button type="button">Normal</button>
+		<button type="button">Debounced (default)</button>
+		<button type="button">Debounced (3s)</button>
+
+		<div></div>
+
+	</body>
+	
+	<script>
+	
+		const div = document.querySelector("div");
+	
+		const addDate = () => {
+			const span = document.createElement("span");
+			span.textContent = new Date();
+			div.appendChild(span);
+		};
+	
+		document.querySelectorAll("button")[0].onpointerdown = addDate;
+		
+		document.querySelectorAll("button")[1].ngpointerdown = addDate;
+		
+		document.querySelectorAll("button")[2].ngpointerdown = addDate;
+		document.querySelectorAll("button")[2].ngdebounce = 3000;
+		
+		
+		document.querySelectorAll("button")[0].ngstyle = { border:"3px solid red", padding:"1em" };
+		
+	</script>
+	
+</html>
