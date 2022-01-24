@@ -8,7 +8,7 @@ Object.defineProperties(HTMLElement.prototype, {
 		
 		set: function ($d) {
 			
-			this.style.cursor = "pointer";
+			this.classList.add("ngpointerdown");
 			
 			if (this._ngX === undefined) { this._ngX = {}; }
 			
